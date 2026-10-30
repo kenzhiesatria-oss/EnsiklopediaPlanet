@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- 1. PENGATURAN DASAR: metadata, judul tab, dan koneksi CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050816">
+    <meta name="description" content="KOSMO adalah ensiklopedia digital untuk mengenal Tata Surya, planet, misi antariksa, dan fenomena alam semesta.">
+    <title>KOSMO | Ensiklopedia dan Eksplorasi Antariksa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 2. HEADER: identitas website dan navigasi utama -->
+    <header id="header">
+        <a class="logo" href="#home" aria-label="Kembali ke Beranda">KOSMO<span>.</span></a>
+        <nav aria-label="Navigasi utama">
+            <a href="#home">Beranda</a>
+            <a href="#explore">Eksplorasi</a>
+            <a href="#encyclopedia">Ensiklopedia</a>
+            <a href="#facts">Fakta Unik</a>
+            <a href="#missions">Misi Antariksa</a>
+            <a href="#gallery">Galeri</a>
+            <a href="#about">Tentang KOSMO</a>
+        </nav>
+    </header>
+
+    <!-- 3. MAIN: seluruh konten utama website -->
+    <main>
+
+        <!-- 3A. BERANDA / HERO: pengenalan singkat dan ajakan menjelajah -->
+        <section id="home" aria-labelledby="home-title">
+            <div class="hero-content">
+                <p class="eyebrow">ENSIKLOPEDIA DIGITAL ANTARIKSA</p>
+                <h1 id="home-title">JELAJAHI<br><span>ALAM SEMESTA</span></h1>
+                <p class="hero-description">
+                    Selamat datang di KOSMO, ruang eksplorasi digital untuk
+                    mengenal Tata Surya, planet, bintang, galaksi, dan berbagai
+                    fenomena luar angkasa. Perluas wawasanmu dan temukan betapa
+                    luas serta menakjubkannya alam semesta.
+                </p>
+                <a class="hero-button" href="#explore">Mulai Eksplorasi</a>
+                <div class="hero-highlights">
+                    <span>8 Planet</span><span>•</span>
+                    <span>1 Tata Surya</span><span>•</span>
+                    <span>Banyak Hal untuk Dipelajari</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3B. PENDAHULUAN: memberikan pengertian dasar sebelum eksplorasi -->
+        <section id="introduction" aria-labelledby="introduction-title">
+            <div class="section-heading">
+                <p class="eyebrow">PENDAHULUAN</p>
+                <h2 id="introduction-title">Mengenal Alam Semesta</h2>
+            </div>
+            <div class="introduction-content">
+                <article>
+                    <h3>Apa Itu Alam Semesta?</h3>
+                    <p>
+                        Alam semesta adalah keseluruhan ruang dan waktu beserta
+                        segala sesuatu yang ada di dalamnya, termasuk materi,
+                        energi, bintang, planet, galaksi, gas, debu kosmik, dan
+                        berbagai objek langit lainnya. Alam semesta sangat luas
+                        dan masih menjadi salah satu objek penelitian terbesar
+                        dalam ilmu pengetahuan.
+                    </p>
+                </article>
+                <article>
+                    <h3>Apa Itu Tata Surya?</h3>
+                    <p>
+                        Tata Surya adalah sistem benda-benda langit yang terikat
+                        oleh gaya gravitasi Matahari. Matahari menjadi pusat
+                        sistem ini, sedangkan planet, planet katai, asteroid,
+                        komet, dan benda langit lainnya bergerak mengelilinginya
+                        atau berada di wilayah pengaruh gravitasinya.
+                    </p>
+                </article>
+                <article>
+                    <h3>Apa Itu Planet?</h3>
+                    <p>
+                        Planet adalah benda langit yang mengorbit sebuah bintang,
+                        memiliki bentuk hampir bulat karena gravitasinya sendiri,
+                        dan telah membersihkan sebagian besar benda lain di
+                        sekitar jalur orbitnya. Di Tata Surya terdapat delapan
+                        planet yang diakui secara resmi.
+                    </p>
+                </article>
+                <article>
+                    <h3>Mengapa KOSMO Dibuat?</h3>
+                    <p>
+                        KOSMO dibuat sebagai media pembelajaran digital yang
+                        membantu pengunjung mengenal antariksa dengan cara yang
+                        informatif dan interaktif. Melalui penjelasan, visualisasi
+                        Tata Surya, fakta menarik, dan informasi misi antariksa,
+                        KOSMO mengajak siapa pun untuk terus belajar dan
+                        menumbuhkan rasa ingin tahu terhadap alam semesta.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3C. EKSPLORASI 3D: wadah visualisasi Three.js dari script.js -->
+        <section id="explore" aria-labelledby="explore-title">
+            <div class="section-heading">
+                <p class="eyebrow">PENGALAMAN INTERAKTIF</p>
+                <h2 id="explore-title">Eksplorasi Tata Surya</h2>
+                <p>
+                    Amati Matahari dan delapan planet yang mengelilinginya
+                    melalui simulasi tiga dimensi. Pilih sebuah planet untuk
+                    melihat informasi singkat tentangnya.
+                </p>
+            </div>
+
+            <!-- ID container wajib dipertahankan karena dipakai script.js -->
+            <div id="solar-system-container">
+                <div id="loading" role="status">Memuat simulasi Tata Surya...</div>
+                <aside id="planet-info" aria-live="polite">
+                    <p class="eyebrow">OBJEK TERPILIH</p>
+                    <h3 id="planet-name">Matahari</h3>
+                    <p id="planet-description">
+                        Matahari adalah bintang yang menjadi pusat Tata Surya.
+                        Gravitasinya menjaga planet-planet tetap berada pada
+                        orbitnya, sementara energinya menjadi sumber cahaya
+                        dan panas bagi Bumi.
+                    </p>
+                </aside>
+            </div>
+            <div class="explore-instructions">
+                <h3>Cara Menggunakan Simulasi</h3>
+                <ul>
+                    <li>Geser atau tarik area simulasi untuk mengubah sudut pandang jika kontrol tersedia.</li>
+                    <li>Pilih atau klik planet untuk menampilkan informasi singkat.</li>
+                    <li>Gunakan fitur zoom jika didukung oleh perangkat dan kontrol simulasi.</li>
+                </ul>
+                <p class="small-note">
+                    Catatan: ukuran dan jarak planet pada simulasi dapat
+                    disesuaikan agar seluruh objek terlihat. Karena itu,
+                    tampilannya tidak selalu menggunakan skala astronomi sebenarnya.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3D. ENSIKLOPEDIA PLANET: kartu planet dibuat oleh script.js -->
+        <section id="encyclopedia" aria-labelledby="encyclopedia-title">
+            <div class="section-heading">
+                <p class="eyebrow">PUSAT INFORMASI PLANET</p>
+                <h2 id="encyclopedia-title">Ensiklopedia Planet</h2>
+                <p>
+                    Kenali delapan planet di Tata Surya, mulai dari Merkurius
+                    yang paling dekat dengan Matahari hingga Neptunus yang
+                    berada di wilayah terluar. Setiap planet memiliki ukuran,
+                    komposisi, atmosfer, suhu, dan karakteristik yang berbeda.
+                </p>
+            </div>
+            <!-- Jangan hapus ID planet-list; script.js mengisi daftar ini. -->
+            <div id="planet-list"></div>
+        </section>
+
+        <!-- 3E. FAKTA UNIK: JavaScript mengganti fakta saat tombol ditekan -->
+        <section id="facts" aria-labelledby="facts-title">
+            <div class="section-heading">
+                <p class="eyebrow">TAHUKAH KAMU?</p>
+                <h2 id="facts-title">Fakta Unik Alam Semesta</h2>
+                <p>
+                    Alam semesta menyimpan berbagai fenomena menarik.
+                    Temukan pengetahuan baru melalui fakta-fakta astronomi
+                    yang telah disiapkan di KOSMO.
+                </p>
+            </div>
+            <div id="fact-container">
+                <p id="random-fact" aria-live="polite">
+                    Menyiapkan fakta menarik tentang alam semesta...
+                </p>
+                <button id="next-fact" type="button">Fakta Berikutnya</button>
+            </div>
+        </section>
+
+        <!-- 3F. MISI ANTARIKSA: contoh perjalanan manusia menjelajahi ruang angkasa -->
+        <section id="missions" aria-labelledby="missions-title">
+            <div class="section-heading">
+                <p class="eyebrow">MENJELAJAHI LUAR BUMI</p>
+                <h2 id="missions-title">Misi Penjelajahan Antariksa</h2>
+                <p>
+                    Manusia mempelajari ruang angkasa melalui satelit, teleskop,
+                    wahana tanpa awak, dan penerbangan antariksa berawak.
+                    Misi-misi ini membantu ilmuwan memahami planet dan
+                    lingkungan luar angkasa.
+                </p>
+            </div>
+            <div id="mission-list">
+                <article class="mission-item">
+                    <h3>Apollo 11</h3>
+                    <p>
+                        Apollo 11 adalah misi NASA yang pada Juli 1969 berhasil
+                        membawa manusia mendarat di Bulan untuk pertama kalinya.
+                        Neil Armstrong dan Buzz Aldrin berjalan di permukaan
+                        Bulan, sementara Michael Collins tetap berada di orbit
+                        Bulan dalam modul komando.
+                    </p>
+                </article>
+                <article class="mission-item">
+                    <h3>Voyager 1</h3>
+                    <p>
+                        Voyager 1 adalah wahana antariksa nirawak yang diluncurkan
+                        NASA pada tahun 1977. Wahana ini mempelajari planet-planet
+                        luar dan kemudian melanjutkan perjalanan ke ruang
+                        antarbintang, membawa informasi tentang Bumi melalui
+                        Golden Record.
+                    </p>
+                </article>
+                <article class="mission-item">
+                    <h3>Mars Rover Perseverance</h3>
+                    <p>
+                        Perseverance adalah wahana penjelajah NASA yang mendarat
+                        di Mars pada tahun 2021. Misi utamanya mempelajari
+                        lingkungan Mars purba, mencari tanda-tanda kehidupan
+                        mikroba masa lalu, serta mengumpulkan sampel batuan
+                        untuk kemungkinan penelitian lebih lanjut.
+                    </p>
+                </article>
+                <article class="mission-item">
+                    <h3>Teleskop Antariksa James Webb</h3>
+                    <p>
+                        James Webb Space Telescope adalah teleskop antariksa
+                        yang dirancang untuk mengamati alam semesta menggunakan
+                        cahaya inframerah. Pengamatannya membantu ilmuwan
+                        mempelajari galaksi awal, pembentukan bintang, dan
+                        atmosfer beberapa planet di luar Tata Surya.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3G. GALERI: tempat foto planet, galaksi, nebula, dan objek langit -->
+        <section id="gallery" aria-labelledby="gallery-title">
+            <div class="section-heading">
+                <p class="eyebrow">JENDELA MENUJU KOSMOS</p>
+                <h2 id="gallery-title">Galeri Alam Semesta</h2>
+                <p>
+                    Lihat keindahan berbagai objek antariksa melalui kumpulan
+                    gambar dan dokumentasi astronomi.
+                </p>
+            </div>
+            <!-- Tambahkan figure dan img di sini ketika gambar sudah tersedia. -->
+            <div id="gallery-container">
+                <p class="gallery-placeholder">
+                    Galeri antariksa akan segera ditambahkan.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3H. TENTANG KOSMO: identitas, tujuan, dan tim pengembang -->
+        <section id="about" aria-labelledby="about-title">
+            <div class="section-heading">
+                <p class="eyebrow">TENTANG PROYEK</p>
+                <h2 id="about-title">Tentang KOSMO</h2>
+            </div>
+            <div class="about-content">
+                <article>
+                    <h3>Apa Itu KOSMO?</h3>
+                    <p>
+                        KOSMO merupakan website ensiklopedia dan eksplorasi
+                        antariksa yang dirancang sebagai media pembelajaran
+                        digital. Website ini menyajikan informasi tentang
+                        Tata Surya, planet, fenomena alam semesta, serta
+                        perjalanan manusia dalam menjelajahi ruang angkasa.
+                    </p>
+                </article>
+                <article>
+                    <h3>Tujuan Pengembangan</h3>
+                    <p>
+                        KOSMO bertujuan menyampaikan pengetahuan astronomi
+                        dengan cara yang mudah dipahami, menarik, dan interaktif.
+                        Melalui website ini, pengunjung diharapkan dapat
+                        menambah wawasan, mengenali objek-objek antariksa,
+                        serta mengembangkan rasa ingin tahu terhadap sains.
+                    </p>
+                </article>
+                <article>
+                    <h3>Tim Pengembang</h3>
+                    <p>
+                        KOSMO dikembangkan sebagai proyek kolaborasi oleh
+                        Kenzhi dan Riyan. Keduanya bekerja sama dalam menyusun
+                        informasi, merancang tampilan, mengembangkan fitur,
+                        dan menguji website agar dapat digunakan sebagai
+                        media edukasi antariksa.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. FOOTER: identitas dan informasi penutup website -->
+    <footer id="footer">
+        <p class="footer-logo">KOSMO<span>.</span></p>
+        <p>Menjelajahi alam semesta, memperluas pengetahuan.</p>
+        <p>© 2026 KOSMO. Dikembangkan oleh Kenzhi dan Riyan.</p>
+    </footer>
+
+    <!-- 5. JAVASCRIPT: type="module" diperlukan karena script.js
+         mengimpor Three.js. Pastikan script.js satu folder dengan file ini. -->
+    <script type="module" src="script.js"></script>
+
+</body>
+                      </html>
